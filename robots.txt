@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abdulrahman-hasanen.github.io/portfolio/sitemap.xml

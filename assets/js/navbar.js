@@ -170,6 +170,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { passive: true });
 
 
+    // Scrollspy (home page only): highlight the nav link of the visible section
+    const ACTIVE = ["bg-blue-600/25", "text-white"];
+    const INACTIVE = ["text-slate-300"];
+    const navLinks = document.querySelectorAll("[data-nav]");
+
+    const SECTION_TO_NAV = {
+        "home": "home",
+        "focus": "home",
+        "projects": "projects",
+        "about": "about",
+        "contact-cta": null,
+        "contact": null
+    };
+
+    function setActiveNav(key) {
+        navLinks.forEach(link => {
+            const isActive = link.dataset.nav === key;
+            ACTIVE.forEach(c => link.classList.toggle(c, isActive));
+            INACTIVE.forEach(c => link.classList.toggle(c, !isActive));
+            if (isActive) {
+                link.setAttribute("aria-current", "page");
+            } else {
+                link.removeAttribute("aria-current");
+            }
+        });
+    }
+
+    const homeSections = Object.keys(SECTION_TO_NAV)
+        .map(id => document.getElementById(id))
+        .filter(Boolean);
+    const onHomePage = Boolean(document.getElementById("home")) &&
+        Boolean(document.getElementById("projects"));
+
+    if (onHomePage && navLinks.length && "IntersectionObserver" in window) {
+        const spy = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveNav(SECTION_TO_NAV[entry.target.id]);
+                }
+            });
+        }, { rootMargin: "-45% 0px -50% 0px" });
+
+        homeSections.forEach(section => spy.observe(section));
+    }
+
+
     // Mobile menu button
     if (menuToggle && mobileMenu) {
 

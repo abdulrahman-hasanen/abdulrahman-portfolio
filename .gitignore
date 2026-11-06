@@ -4,16 +4,19 @@ __pycache__/
 .venv/
 venv/
 
+# Django uploaded media
+/media/*
+!/media/projects/
+!/media/projects/**
+
 # Secrets and local state
 .env
+.env.*
+!.env.example
 db.sqlite3
 
-# Media files
-media/*
-!media/projects/
-
 # Generated files
-staticfiles/
+/staticfiles/
 
 # Tooling
 tools/tailwindcss*

@@ -13,7 +13,7 @@
  * - github_url:   (String, optional) URL to source repository (or null / "")
  * - live_url:     (String, optional) URL to live deployment (or null / "")
  * - description:  (String, optional) Detailed project description
- * - image:        (String, optional) Relative path to image e.g. "./assets/images/projects/my-project.png"
+ * - image:        (String, optional) Relative path to image e.g. "./assets/images/projects/my-project.webp"
  * - is_published: (Boolean) Set to true to show on website, false to draft/hide
  * - order:        (Number) Sorting priority (lower numbers appear first)
  * - created_at:   (String) ISO date/timestamp used for secondary sorting
@@ -30,7 +30,7 @@ const PROJECTS_DATA = [
     github_url: "https://github.com/abdulrahman-hasanen/alhusseinycont",
     live_url: "https://abdulrahman-hasanen.github.io/alhusseinycont/",
     description: "A modern, responsive Arabic corporate website for Al-Husseiny Contracting. Designed to showcase the company's profile, contracting services, projects, and business information through a professional right-to-left interface. The website features clear navigation, a project gallery, and responsive layouts to provide a smooth browsing experience across desktop and tablet devices.",
-    image: "./assets/images/projects/Al-HusseinyContracting.png",
+    image: "./assets/images/projects/Al-HusseinyContracting.webp",
     is_published: true,
     order: 0,
     created_at: "2026-11-05T17:06:18Z"
@@ -45,7 +45,7 @@ const PROJECTS_DATA = [
     github_url: "https://github.com/abdulrahman-hasanen/fanniceramic",
     live_url: "https://abdulrahman-hasanen.github.io/fanniceramic/",
     description: "A responsive website for a ceramic installation and maintenance service in Kuwait. Designed to showcase the company's services and previous work through a visual project gallery, with accessible contact options that help potential customers explore the services and get in touch easily.",
-    image: "./assets/images/projects/FanniCeramic.png",
+    image: "./assets/images/projects/FanniCeramic.webp",
     is_published: true,
     order: 0,
     created_at: "2026-11-05T17:03:13Z"

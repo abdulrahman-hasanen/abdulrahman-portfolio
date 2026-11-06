@@ -1,10 +1,5 @@
 function initAboutPage() {
-    console.log("About JS Loaded");
-
     initAboutCountUp();
-    initAboutReveal();
-    initAboutGsap();
-    initAboutPhotoTilt();
 }
 
 if (document.readyState === "loading") {
@@ -19,8 +14,6 @@ if (document.readyState === "loading") {
 
 function initAboutCountUp() {
     const counters = document.querySelectorAll("[data-count-up]");
-
-    console.log("Counters Found:", counters.length);
 
     if (!counters.length) return;
 

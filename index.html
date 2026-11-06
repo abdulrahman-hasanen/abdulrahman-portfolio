@@ -4,13 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdulrahman Hasanen</title>
+    <title>Abdulrahman Hasanen | Software Engineer</title>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- SEO / sharing -->
+    <meta name="description" content="Portfolio of Abdulrahman Hasanen, Computer Science student at Assiut University. Web projects built with Python, Django, HTML, CSS and JavaScript.">
+    <meta name="theme-color" content="#0B0D13">
+    <link rel="canonical" href="https://abdulrahman-hasanen.github.io/portfolio/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Abdulrahman Hasanen">
+    <meta property="og:title" content="Abdulrahman Hasanen | Software Engineer">
+    <meta property="og:description" content="Portfolio of Abdulrahman Hasanen, Computer Science student at Assiut University. Web projects built with Python, Django, HTML, CSS and JavaScript.">
+    <meta property="og:url" content="https://abdulrahman-hasanen.github.io/portfolio/">
+    <meta property="og:image" content="https://abdulrahman-hasanen.github.io/portfolio/assets/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Abdulrahman Hasanen",
+      "jobTitle": "Computer Science Student",
+      "url": "https://abdulrahman-hasanen.github.io/portfolio/",
+      "affiliation": {"@type": "CollegeOrUniversity", "name": "Assiut University"},
+      "sameAs": ["https://github.com/abdulrahman-hasanen", "https://www.linkedin.com/in/abdulrahman-hasanen"]
+    }
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    <link rel="icon" href="./assets/images/favicon.ico" sizes="48x48 32x32 16x16">
     <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
 
     <!-- Font Awesome Icons -->
@@ -23,6 +45,9 @@
     <!-- Button Design System — loaded after Tailwind to allow intentional overrides -->
     <link rel="stylesheet" href="./assets/css/buttons.css">
 
+    <!-- Tailwind (built locally, see README). Loaded last, same cascade the CDN build had. -->
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,65 +55,48 @@
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
         rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        brand: {
-                            dark: '#0B0D13',
-                            card: '#121622',
-                            border: '#1E2638',
-                            blue: '#2563EB',
-                            blueHover: '#1D4ED8',
-                            lightBlue: '#3B82F6',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
 <body class="bg-brand-dark text-slate-300 font-sans selection:bg-brand-blue selection:text-white antialiased">
+
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">
+        Skip to main content
+    </a>
 
     <!-- Header / Navbar -->
     <header id="site-header" data-smart-header data-hidden="false"
         class="fixed inset-x-0 top-0 z-50 translate-y-0 opacity-100 transition-all duration-300 ease-out data-[hidden=true]:-translate-y-full data-[hidden=true]:opacity-0 data-[hidden=true]:pointer-events-none">
         <!-- Header Container -->
         <div id="header-shell" data-floating="false"
-            class="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 border border-transparent bg-transparent px-6 py-5 transition-all duration-300 ease-out data-[floating=true]:mt-3 data-[floating=true]:w-[calc(100%-2rem)] data-[floating=true]:max-w-6xl data-[floating=true]:rounded-2xl data-[floating=true]:border-blue-500/20 data-[floating=true]:bg-[#090F1C]/90 data-[floating=true]:px-5 data-[floating=true]:py-3 data-[floating=true]:shadow-2xl data-[floating=true]:backdrop-blur-xl">
+            class="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 border border-transparent bg-transparent px-6 py-5 transition-all duration-300 ease-out data-[floating=true]:mt-3 data-[floating=true]:w-[calc(100%-2rem)] data-[floating=true]:max-w-6xl data-[floating=true]:rounded-2xl data-[floating=true]:border-blue-500/20 data-[floating=true]:bg-surface-2/90 data-[floating=true]:px-5 data-[floating=true]:py-3 data-[floating=true]:shadow-2xl data-[floating=true]:backdrop-blur-xl">
 
             <!-- Logo -->
             <a href="./index.html#home" class="group flex shrink-0 items-center"
                 aria-label="Abdulrahman Hasanen - Home">
-                <img src="./assets/images/logo.png" alt="Abdulrahman Hasanen Logo"
+                <img width="240" height="180" src="./assets/images/logo.webp" alt="Abdulrahman Hasanen Logo"
                     class="block h-11 w-auto max-w-[150px] object-contain object-left">
             </a>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+            <nav aria-label="Main navigation" class="hidden items-center gap-1 md:flex" aria-label="Main navigation">
 
-                <a href="./index.html#home"
+                <a href="./index.html#home" data-nav="home" aria-current="page"
                     class="rounded-full bg-blue-600/25 text-white px-5 py-2.5 text-sm font-semibold transition-colors">
                     Home
                 </a>
 
-                <a href="./about.html"
+                <a href="./about.html" data-nav="about"
                     class="rounded-full text-slate-300 hover:bg-blue-600/25 hover:text-white px-5 py-2.5 text-sm font-medium transition-colors">
                     About
                 </a>
 
-                <a href="./index.html#projects"
+                <a href="./index.html#projects" data-nav="projects"
                     class="rounded-full text-slate-300 hover:bg-blue-600/25 hover:text-white px-5 py-2.5 text-sm font-medium transition-colors">
                     Projects
                 </a>
 
-                <a href="./resources.html"
+                <a href="./resources.html" data-nav="resources"
                     class="rounded-full text-slate-300 hover:bg-blue-600/25 hover:text-white px-5 py-2.5 text-sm font-medium transition-colors">
                     Resources
                 </a>
@@ -104,7 +112,7 @@
 
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-toggle" type="button"
-                class="flex h-11 w-11 flex-col items-center justify-center gap-[6px] rounded-xl border border-slate-700 bg-[#111B2D] transition-colors hover:border-blue-500 md:hidden"
+                class="flex h-11 w-11 flex-col items-center justify-center gap-[6px] rounded-xl border border-slate-700 bg-surface-3 transition-colors hover:border-blue-500 md:hidden"
                 aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
                 <span class="h-[2px] w-5 rounded-full bg-white transition-all duration-300"></span>
                 <span class="h-[2px] w-5 rounded-full bg-white transition-all duration-300"></span>
@@ -115,7 +123,7 @@
 
         <!-- Mobile Navigation -->
         <div id="mobile-menu"
-            class="absolute left-4 right-4 top-full mt-2 hidden overflow-hidden rounded-2xl border border-slate-700/80 bg-[#090F1C]/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
+            class="absolute left-4 right-4 top-full mt-2 hidden overflow-hidden rounded-2xl border border-slate-700/80 bg-surface-2/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
 
             <nav class="flex flex-col gap-1" aria-label="Mobile navigation">
 
@@ -146,11 +154,11 @@
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main id="main-content" tabindex="-1" class="outline-none">
         <!-- =========================================================
      01. HERO SECTION
 ========================================================= -->
-        <section id="home" class="relative isolate overflow-hidden bg-[#05070D] text-white pt-20 pb-6 lg:pt-20">
+        <section id="home" class="relative isolate overflow-hidden bg-surface-0 text-white pt-20 pb-6 lg:pt-20">
 
             <!-- Background Grid -->
             <div class="pointer-events-none absolute inset-0 opacity-25
@@ -182,7 +190,7 @@
                         <span class="absolute -bottom-1 -left-1 h-2 w-2 bg-cyan-400"></span>
                         <span class="absolute -bottom-1 -right-1 h-2 w-2 bg-cyan-400"></span>
 
-                        <span class="relative z-10 text-[10px] font-bold uppercase tracking-[0.17em] text-slate-300">
+                        <span class="relative z-10 text-xs font-bold uppercase tracking-[0.17em] text-slate-300">
                             COMPUTER SCIENCE STUDENT
                         </span>
 
@@ -192,7 +200,7 @@
 
 
                     <!-- Education Label -->
-                    <p class="hero-enter hero-delay-2 mb-3 mt-6 text-[11px] font-medium uppercase
+                    <p class="hero-enter hero-delay-2 mb-3 mt-6 text-xs font-medium uppercase
                 tracking-[0.18em] text-slate-400 sm:text-xs">
                         OPEN TO INTERNSHIPS · FREELANCE PROJECTS · COLLABORATION
                     </p>
@@ -244,7 +252,7 @@
 
                         <a href="https://github.com/abdulrahman-hasanen" target="_blank" rel="noopener noreferrer"
                             aria-label="GitHub" class="flex h-10 w-10 items-center justify-center
-                    rounded-xl border border-slate-700/60 bg-[#111B2D]
+                    rounded-xl border border-slate-700/60 bg-surface-3
                     text-slate-300 transition-all duration-300
                     hover:border-blue-500 hover:bg-blue-600/20 hover:text-white">
                             <i class="fa-brands fa-github text-lg"></i>
@@ -253,7 +261,7 @@
 
                         <a href="https://www.linkedin.com/in/abdulrahman-hasanen" target="_blank"
                             rel="noopener noreferrer" aria-label="LinkedIn" class="flex h-10 w-10 items-center justify-center
-                    rounded-xl border border-slate-700/60 bg-[#111B2D]
+                    rounded-xl border border-slate-700/60 bg-surface-3
                     text-slate-300 transition-all duration-300
                     hover:border-blue-500 hover:bg-blue-600/20 hover:text-white">
                             <i class="fa-brands fa-linkedin-in text-base"></i>
@@ -262,7 +270,7 @@
 
                         <a href="https://instagram.com/abdulrahman.hasanen" target="_blank" rel="noopener noreferrer"
                             aria-label="Instagram" class="flex h-10 w-10 items-center justify-center
-                                    rounded-xl border border-slate-700/60 bg-[#111B2D]
+                                    rounded-xl border border-slate-700/60 bg-surface-3
                                     text-slate-300 transition-all duration-300
                                     hover:border-blue-500 hover:bg-blue-600/20 hover:text-white">
                             <i class="fa-brands fa-instagram text-lg"></i>
@@ -270,7 +278,7 @@
 
                         <a href="https://facebook.com/abdulrahman.hasanen" target="_blank" rel="noopener noreferrer"
                             aria-label="Facebook" class="flex h-10 w-10 items-center justify-center
-                                                    rounded-xl border border-slate-700/60 bg-[#111B2D]
+                                                    rounded-xl border border-slate-700/60 bg-surface-3
                                                     text-slate-300 transition-all duration-300
                                                     hover:border-blue-500 hover:bg-blue-600/20 hover:text-white">
                             <i class="fa-brands fa-facebook text-lg"></i>
@@ -279,7 +287,7 @@
 
                         <a href="https://tiktok.com/@abdulrahman.hasanen" target="_blank" rel="noopener noreferrer"
                             aria-label="TikTok" class="flex h-10 w-10 items-center justify-center
-                                    rounded-xl border border-slate-700/60 bg-[#111B2D]
+                                    rounded-xl border border-slate-700/60 bg-surface-3
                                     text-slate-300 transition-all duration-300
                                     hover:border-blue-500 hover:bg-blue-600/20 hover:text-white">
                             <i class="fa-brands fa-tiktok text-lg"></i>
@@ -287,7 +295,7 @@
 
                         <a href="https://t.me/AbdulrahmanHasanen" target="_blank" rel="noopener noreferrer"
                             aria-label="Telegram" class="flex h-10 w-10 items-center justify-center
-                                                    rounded-xl border border-slate-700/60 bg-[#111B2D]
+                                                    rounded-xl border border-slate-700/60 bg-surface-3
                                                     text-slate-300 transition-all duration-300
                                                     hover:border-blue-500 hover:bg-blue-600/20 hover:text-white">
                             <i class="fa-brands fa-telegram text-lg"></i>
@@ -330,7 +338,7 @@
                 -translate-y-10
                 items-end justify-center sm:h-[420px]">
 
-                        <img src="./assets/images/pro1.png" alt="Abdulrahman Hasanen" loading="eager"
+                        <img width="900" height="900" src="./assets/images/pro1.webp" alt="Abdulrahman Hasanen" loading="eager"
                             fetchpriority="high" decoding="async" draggable="false" class="h-full w-full object-contain object-bottom
                     drop-shadow-[0_15px_30px_rgba(0,0,0,0.35)]
                     transition-transform duration-700 ease-out
@@ -341,7 +349,7 @@
                     <!-- Problem Solving Badge -->
                     <div class="absolute left-0 top-[20%] z-20 flex items-center
             gap-2.5 rounded-xl border border-blue-500/50 hero-float
-            bg-[#111B2D]/95 px-3.5 py-2.5 shadow-xl
+            bg-surface-3/95 px-3.5 py-2.5 shadow-xl
             shadow-blue-950/30 backdrop-blur-xl sm:left-[-1%]">
 
                         <i class="fa-solid fa-brain text-xl text-cyan-400"></i>
@@ -355,7 +363,7 @@
                     <!-- Software Development Badge -->
                     <div class="absolute right-0 top-[45%] z-20 flex items-center
             gap-2.5 rounded-xl border border-cyan-500/40 hero-float hero-float-delay
-            bg-[#111B2D]/95 px-3.5 py-2.5 shadow-xl
+            bg-surface-3/95 px-3.5 py-2.5 shadow-xl
             backdrop-blur-xl sm:right-[-1%]">
 
                         <i class="fa-solid fa-laptop-code text-xl text-blue-400"></i>
@@ -379,14 +387,14 @@
                             <span class="h-2.5 w-2.5 rounded-full bg-yellow-400"></span>
                             <span class="h-2.5 w-2.5 rounded-full bg-green-500"></span>
 
-                            <span class="ml-auto font-mono text-[9px] text-slate-500">
+                            <span class="ml-auto font-mono text-xs text-slate-400">
                                 main.py
                             </span>
                         </div>
 
 
                         <!-- Editor Code -->
-                        <pre class="p-3 font-mono text-[11px] leading-5 text-slate-200 sm:text-xs"><code><span class="text-pink-400">def</span> <span class="text-cyan-400">build_solution</span>():
+                        <pre class="p-3 font-mono text-xs leading-5 text-slate-200 sm:text-xs"><code><span class="text-pink-400">def</span> <span class="text-cyan-400">build_solution</span>():
     <span class="text-pink-400">return</span> <span class="text-green-400">"Ideas into reality"</span></code></pre>
 
                     </div>
@@ -439,7 +447,7 @@
                         <span class="absolute -bottom-1 -left-1 h-2 w-2 bg-cyan-400"></span>
                         <span class="absolute -bottom-1 -right-1 h-2 w-2 bg-cyan-400"></span>
 
-                        <span class="relative z-10 text-[10px] font-bold uppercase tracking-[0.17em] text-slate-300">
+                        <span class="relative z-10 text-xs font-bold uppercase tracking-[0.17em] text-slate-300">
                             MY LEARNING PATH
                         </span>
 
@@ -503,7 +511,7 @@
                         <!-- Content -->
                         <div class="mt-6">
 
-                            <span class="text-[9px] font-bold uppercase tracking-[0.15em] text-blue-400">
+                            <span class="text-xs font-bold uppercase tracking-[0.15em] text-blue-400">
                                 THINK · DESIGN · BUILD
                             </span>
 
@@ -569,7 +577,7 @@
                         <!-- Content -->
                         <div class="mt-6">
 
-                            <span class="text-[9px] font-bold uppercase tracking-[0.15em] text-blue-400">
+                            <span class="text-xs font-bold uppercase tracking-[0.15em] text-blue-400">
                                 LOGIC · THINKING · PROBLEM SOLVING
                             </span>
 
@@ -635,7 +643,7 @@
                         <!-- Content -->
                         <div class="mt-6">
 
-                            <span class="text-[9px] font-bold uppercase tracking-[0.15em] text-blue-400">
+                            <span class="text-xs font-bold uppercase tracking-[0.15em] text-blue-400">
                                 EXPLORE · CREATE · IMPROVE
                             </span>
 
@@ -682,12 +690,12 @@
                 <div data-reveal="up"
                     class="mt-9 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.06] pt-5">
 
-                    <p class="text-[11px] font-medium text-slate-500">
+                    <p class="text-xs font-medium text-slate-400">
                         Still learning. Always building. Never stopping.
                     </p>
 
                     <span
-                        class="inline-flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.15em] text-cyan-400">
+                        class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.15em] text-cyan-400">
 
                         <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-400"></span>
 
@@ -733,7 +741,7 @@
                         <span class="absolute -bottom-1 -left-1 h-2 w-2 bg-cyan-400"></span>
                         <span class="absolute -bottom-1 -right-1 h-2 w-2 bg-cyan-400"></span>
 
-                        <span class="relative z-10 text-[10px] font-bold uppercase tracking-[0.17em] text-slate-300">
+                        <span class="relative z-10 text-xs font-bold uppercase tracking-[0.17em] text-slate-300">
                             RECENT WORK
                         </span>
 
@@ -767,7 +775,7 @@
 
                 <!-- Projects Grid -->
                 <div id="projects-container" data-limit="3"
-                    class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"><noscript><p class="col-span-full text-sm text-slate-400">Projects load with JavaScript. You can also see them on <a class="text-blue-400 underline" href="https://github.com/abdulrahman-hasanen">GitHub</a>.</p></noscript>
                     <!-- Project cards rendered dynamically via assets/js/projects.js -->
                 </div>
 
@@ -795,7 +803,7 @@
         <!-- =========================================================
      04. ABOUT PREVIEW
 ========================================================= -->
-        <section id="about" class="relative overflow-hidden bg-[#070B14] py-20 lg:py-24">
+        <section id="about" class="relative overflow-hidden bg-surface-1 py-20 lg:py-24">
 
             <!-- Background Lighting -->
             <div class="pointer-events-none absolute -left-40 top-20
@@ -822,7 +830,7 @@
                         <!-- Profile Image -->
                         <div class="relative h-[270px] overflow-hidden sm:h-[285px]">
 
-                            <img src="./assets/images/photo1.png" alt="Abdulrahman Hasanen" loading="lazy"
+                            <img width="800" height="800" src="./assets/images/photo1.webp" alt="Abdulrahman Hasanen" loading="lazy"
                                 class="h-full w-full object-cover object-top">
 
                             <!-- Image Overlay -->
@@ -898,7 +906,7 @@
                             <div class="flex items-center gap-3">
                                 <i class="fa-solid fa-graduation-cap text-blue-400"></i>
 
-                                <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
+                                <span class="text-xs font-bold uppercase tracking-[0.15em] text-slate-400">
                                     Education
                                 </span>
                             </div>
@@ -922,7 +930,7 @@
                             <div class="flex items-center gap-3">
                                 <i class="fa-solid fa-code text-cyan-400"></i>
 
-                                <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
+                                <span class="text-xs font-bold uppercase tracking-[0.15em] text-slate-400">
                                     Current Focus
                                 </span>
                             </div>
@@ -946,7 +954,7 @@
                             <div class="flex items-center gap-3">
                                 <i class="fa-solid fa-lightbulb text-indigo-400"></i>
 
-                                <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-500">
+                                <span class="text-xs font-bold uppercase tracking-[0.15em] text-slate-400">
                                     Approach
                                 </span>
                             </div>
@@ -1002,7 +1010,7 @@
                             <span class="absolute -bottom-1 -right-1 h-2 w-2 bg-cyan-400"></span>
 
                             <span
-                                class="relative z-10 text-[10px] font-bold uppercase tracking-[0.17em] text-slate-300">
+                                class="relative z-10 text-xs font-bold uppercase tracking-[0.17em] text-slate-300">
                                 COMPUTER SCIENCE STUDENT
                             </span>
                         </div>
@@ -1062,14 +1070,14 @@
                 <div data-reveal="up"
                     class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-white/[0.07] pt-5">
 
-                    <span class="font-mono text-[9px] font-bold uppercase tracking-[0.16em] text-slate-500">
+                    <span class="font-mono text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
                         INTERESTED IN
                     </span>
 
 
                     <div class="flex flex-wrap items-center gap-x-5 gap-y-3">
 
-                        <span class="inline-flex items-center gap-2 text-[11px] font-medium text-slate-400">
+                        <span class="inline-flex items-center gap-2 text-xs font-medium text-slate-400">
 
                             <i class="fa-solid fa-graduation-cap text-blue-400"></i>
 
@@ -1078,7 +1086,7 @@
                         </span>
 
 
-                        <span class="inline-flex items-center gap-2 text-[11px] font-medium text-slate-400">
+                        <span class="inline-flex items-center gap-2 text-xs font-medium text-slate-400">
 
                             <i class="fa-solid fa-users text-blue-400"></i>
 
@@ -1087,7 +1095,7 @@
                         </span>
 
 
-                        <span class="inline-flex items-center gap-2 text-[11px] font-medium text-slate-400">
+                        <span class="inline-flex items-center gap-2 text-xs font-medium text-slate-400">
 
                             <i class="fa-solid fa-laptop-code text-blue-400"></i>
 
@@ -1107,7 +1115,7 @@
         <!-- =========================================================
      05. CONTACT SECTION
 ========================================================= -->
-        <section id="contact" class="relative overflow-hidden bg-[#070B14] py-14 sm:py-16">
+        <section id="contact" class="relative overflow-hidden bg-surface-1 py-14 sm:py-16">
 
             <div class="relative mx-auto max-w-6xl px-5 sm:px-6">
 
@@ -1121,7 +1129,7 @@
 
                         <!-- Small Label -->
                         <span
-                            class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-400">
+                            class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-cyan-400">
 
                             <span class="h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
 
@@ -1210,7 +1218,7 @@
                         <!-- Social Links -->
                         <div class="mt-7 border-t border-white/[0.08] pt-5">
 
-                            <span class="text-[10px] font-bold uppercase tracking-[0.16em] text-slate-500">
+                            <span class="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">
                                 Find Me Online
                             </span>
 
@@ -1263,7 +1271,7 @@
 
 
                         <!-- Availability -->
-                        <p class="mt-6 text-[10px] text-slate-500">
+                        <p class="mt-6 text-xs text-slate-400">
                             Internships <span class="mx-1 text-blue-400">·</span>
                             Collaboration <span class="mx-1 text-blue-400">·</span>
                             Freelance
@@ -1273,118 +1281,37 @@
 
 
 
-                    <!-- =============================================
-                 RIGHT: SIMPLE CONTACT FORM
+            <!-- =============================================
+                 RIGHT: GET IN TOUCH
             ============================================== -->
-                    <div data-reveal="right" class="flex flex-col justify-center bg-[#10234D] p-6 sm:p-8 lg:p-10">
+            <div data-reveal="right" class="flex flex-col justify-center bg-[#10234D] p-6 sm:p-8 lg:p-10">
 
-                        <div class="mb-6">
+                <span class="text-xs font-bold uppercase tracking-[0.18em] text-blue-200">
+                    GET IN TOUCH
+                </span>
 
-                            <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-blue-200">
-                                SEND A MESSAGE
-                            </span>
+                <h3 class="mt-2 text-2xl font-extrabold text-white">
+                    Let's talk
+                </h3>
 
-                            <h3 class="mt-2 text-2xl font-extrabold text-white">
-                                Get In Touch
-                            </h3>
+                <p class="mt-2 text-xs leading-6 text-blue-100/60">
+                    Email is the best way to reach me about internships, collaboration or freelance work.
+                    Telegram and WhatsApp are good for quick messages.
+                </p>
 
-                            <p class="mt-2 text-xs leading-6 text-blue-100/60">
-                                Fill in the details below and I'll get back to you.
-                            </p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="mailto:abdulrahmanhasanen.dev@gmail.com" class="btn btn--primary btn--lg">
+                        <i class="fa-regular fa-envelope"></i>
+                        Send an Email
+                    </a>
+                    <a href="https://t.me/AbdulrahmanHasanen" target="_blank" rel="noopener noreferrer"
+                        class="btn btn--secondary btn--lg">
+                        <i class="fa-brands fa-telegram"></i>
+                        Telegram
+                    </a>
+                </div>
 
-                        </div>
-
-
-
-                        <!-- Contact Form -->
-                        <form id="contact-form" data-contact-form data-endpoint="" method="post" class="space-y-3">
-
-
-
-                            <input type="hidden" id="contact-subject" name="subject" value="Portfolio Contact">
-
-
-                            <!-- Name -->
-                            <div>
-
-                                <label for="contact-name"
-                                    class="mb-1.5 block text-[10px] font-semibold text-blue-100/80">
-                                    Your Name
-                                </label>
-
-                                <input type="text" id="contact-name" name="name" placeholder="Enter your name"
-                                    autocomplete="name" required minlength="2" maxlength="100"
-                                    class="w-full rounded-lg border border-white/10 bg-white/[0.08] px-4 py-3 text-xs text-white outline-none transition-all placeholder:text-blue-100/40 focus:border-cyan-300/70 focus:bg-white/[0.12] focus:ring-1 focus:ring-cyan-300/20">
-
-                            </div>
-
-
-
-                            <!-- Email -->
-                            <div>
-
-                                <label for="contact-email"
-                                    class="mb-1.5 block text-[10px] font-semibold text-blue-100/80">
-                                    Email Address
-                                </label>
-
-                                <input type="email" id="contact-email" name="email" placeholder="name@example.com"
-                                    autocomplete="email" required maxlength="254"
-                                    class="w-full rounded-lg border border-white/10 bg-white/[0.08] px-4 py-3 text-xs text-white outline-none transition-all placeholder:text-blue-100/40 focus:border-cyan-300/70 focus:bg-white/[0.12] focus:ring-1 focus:ring-cyan-300/20">
-
-                            </div>
-
-
-
-                            <!-- Message -->
-                            <div>
-
-                                <div class="mb-1.5 flex items-center justify-between gap-3">
-
-                                    <label for="contact-message"
-                                        class="block text-[10px] font-semibold text-blue-100/80">
-                                        Your Message
-                                    </label>
-
-                                    <span id="message-counter" class="font-mono text-[9px] text-blue-100/50">
-                                        0 / 1200
-                                    </span>
-
-                                </div>
-
-
-                                <textarea id="contact-message" name="message" rows="4" minlength="10" maxlength="1200"
-                                    required placeholder="Write your message..."
-                                    class="w-full resize-y rounded-lg border border-white/10 bg-white/[0.08] px-4 py-3 text-xs leading-6 text-white outline-none transition-all placeholder:text-blue-100/40 focus:border-cyan-300/70 focus:bg-white/[0.12] focus:ring-1 focus:ring-cyan-300/20"></textarea>
-
-                            </div>
-
-
-
-                            <!-- Status -->
-                            <div id="contact-status" role="status" aria-live="polite"
-                                class="hidden rounded-lg border px-3 py-2 text-xs leading-6"></div>
-
-
-
-                            <!-- Submit -->
-                            <button id="contact-submit" type="submit"
-                                class="group inline-flex items-center gap-3 rounded-full border border-blue-400/20 bg-[#080E1B] py-1.5 pl-2 pr-6 text-sm font-bold text-white shadow-lg shadow-black/20 transition-all duration-300 hover:bg-[#142746] hover:border-cyan-400/40 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-cyan-400/50 disabled:cursor-not-allowed disabled:opacity-60">
-                                <span
-                                    class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-blue-700">
-                                    <i id="contact-submit-icon btn__icon"
-                                        class="fa-solid fa-paper-plane text-sm transition-transform duration-300 group-hover:translate-x-0.5"></i>
-                                </span>
-
-                                <span id="contact-submit-text">
-                                    Send Message
-                                </span>
-                            </button>
-
-
-                        </form>
-
-                    </div>
+            </div>
 
                 </div>
 
@@ -1394,14 +1321,14 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800/70 bg-[#05070D]">
+    <footer class="border-t border-slate-800/70 bg-surface-0">
 
         <div class="mx-auto flex max-w-7xl flex-col items-center px-6 py-9">
 
             <!-- Logo -->
             <a href="./index.html#home" aria-label="Abdulrahman Hasanen Home"
                 class="inline-flex items-center justify-center">
-                <img src="./assets/images/logo.png" alt="Abdulrahman Hasanen"
+                <img width="240" height="180" src="./assets/images/logo.webp" alt="Abdulrahman Hasanen"
                     class="block h-12 w-auto max-w-[160px] object-contain" loading="lazy">
             </a>
 
@@ -1456,7 +1383,7 @@
             <div class="my-4 h-px w-full max-w-2xl bg-slate-800/70"></div>
 
             <!-- Copyright -->
-            <p class="text-center text-[11px] font-medium text-slate-500">
+            <p class="text-center text-xs font-medium text-slate-400">
                 © 2026 Abdulrahman Hasanen. All Rights Reserved.
             </p>
 
@@ -1471,7 +1398,7 @@
         <button id="back-to-top" type="button" disabled aria-label="Back to top" aria-hidden="true" data-visible="false"
             class="floating-action group relative flex h-12 w-12
             translate-y-3 pointer-events-none items-center justify-center
-            rounded-2xl border border-blue-500/30 bg-[#111B2D]/95
+            rounded-2xl border border-blue-500/30 bg-surface-3/95
             text-blue-400 opacity-0 shadow-xl shadow-black/30
             backdrop-blur-xl transition-all duration-300
             hover:-translate-y-1 hover:border-blue-400

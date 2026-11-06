@@ -6,14 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Abdulrahman Hasanen</title>
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
+
+    <!-- SEO / sharing -->
+    <meta name="description" content="About Abdulrahman Hasanen: Computer Science studies at Assiut University, coursework, project experience, and the technologies he works with.">
+    <meta name="theme-color" content="#0B0D13">
+    <link rel="canonical" href="https://abdulrahman-hasanen.github.io/portfolio/about.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Abdulrahman Hasanen">
+    <meta property="og:title" content="About Me | Abdulrahman Hasanen">
+    <meta property="og:description" content="About Abdulrahman Hasanen: Computer Science studies at Assiut University, coursework, project experience, and the technologies he works with.">
+    <meta property="og:url" content="https://abdulrahman-hasanen.github.io/portfolio/about.html">
+    <meta property="og:image" content="https://abdulrahman-hasanen.github.io/portfolio/assets/images/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./assets/images/favicon.png">
+    <link rel="icon" href="./assets/images/favicon.ico" sizes="48x48 32x32 16x16">
     <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
 
     <link rel="stylesheet" href="./assets/css/navbar.css">
@@ -23,6 +34,9 @@
     <!-- Button Design System — loaded after Tailwind to allow intentional overrides -->
     <link rel="stylesheet" href="./assets/css/buttons.css">
 
+    <!-- Tailwind (built locally, see README). Loaded last, same cascade the CDN build had. -->
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,65 +44,48 @@
         href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
         rel="stylesheet">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace'],
-                    },
-                    colors: {
-                        brand: {
-                            dark: '#0B0D13',
-                            card: '#121622',
-                            border: '#1E2638',
-                            blue: '#2563EB',
-                            blueHover: '#1D4ED8',
-                            lightBlue: '#3B82F6',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
 </head>
 
 <body class="bg-brand-dark text-slate-300 font-sans selection:bg-brand-blue selection:text-white antialiased">
+
+    <a href="#main-content"
+        class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand-blue focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white">
+        Skip to main content
+    </a>
 
     <!-- Header / Navbar -->
     <header id="site-header" data-smart-header data-hidden="false"
         class="fixed inset-x-0 top-0 z-50 translate-y-0 opacity-100 transition-all duration-300 ease-out data-[hidden=true]:-translate-y-full data-[hidden=true]:opacity-0 data-[hidden=true]:pointer-events-none">
         <!-- Header Container -->
         <div id="header-shell" data-floating="false"
-            class="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 border border-transparent bg-transparent px-6 py-5 transition-all duration-300 ease-out data-[floating=true]:mt-3 data-[floating=true]:w-[calc(100%-2rem)] data-[floating=true]:max-w-6xl data-[floating=true]:rounded-2xl data-[floating=true]:border-blue-500/20 data-[floating=true]:bg-[#090F1C]/90 data-[floating=true]:px-5 data-[floating=true]:py-3 data-[floating=true]:shadow-2xl data-[floating=true]:backdrop-blur-xl">
+            class="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 border border-transparent bg-transparent px-6 py-5 transition-all duration-300 ease-out data-[floating=true]:mt-3 data-[floating=true]:w-[calc(100%-2rem)] data-[floating=true]:max-w-6xl data-[floating=true]:rounded-2xl data-[floating=true]:border-blue-500/20 data-[floating=true]:bg-surface-2/90 data-[floating=true]:px-5 data-[floating=true]:py-3 data-[floating=true]:shadow-2xl data-[floating=true]:backdrop-blur-xl">
 
             <!-- Logo -->
             <a href="./index.html#home" class="group flex shrink-0 items-center"
                 aria-label="Abdulrahman Hasanen - Home">
-                <img src="./assets/images/logo.png" alt="Abdulrahman Hasanen Logo"
+                <img width="240" height="180" src="./assets/images/logo.webp" alt="Abdulrahman Hasanen Logo"
                     class="block h-11 w-auto max-w-[150px] object-contain object-left">
             </a>
 
             <!-- Desktop Navigation -->
-            <nav class="hidden items-center gap-1 md:flex" aria-label="Main navigation">
+            <nav aria-label="Main navigation" class="hidden items-center gap-1 md:flex" aria-label="Main navigation">
 
-                <a href="./index.html#home"
+                <a href="./index.html#home" data-nav="home"
                     class="rounded-full text-slate-300 hover:bg-blue-600/25 hover:text-white px-5 py-2.5 text-sm font-semibold transition-colors">
                     Home
                 </a>
 
-                <a href="./about.html"
+                <a href="./about.html" data-nav="about" aria-current="page"
                     class="rounded-full bg-blue-600/25 text-white px-5 py-2.5 text-sm font-medium transition-colors">
                     About
                 </a>
 
-                <a href="./index.html#projects"
+                <a href="./index.html#projects" data-nav="projects"
                     class="rounded-full text-slate-300 hover:bg-blue-600/25 hover:text-white px-5 py-2.5 text-sm font-medium transition-colors">
                     Projects
                 </a>
 
-                <a href="./resources.html"
+                <a href="./resources.html" data-nav="resources"
                     class="rounded-full text-slate-300 hover:bg-blue-600/25 hover:text-white px-5 py-2.5 text-sm font-medium transition-colors">
                     Resources
                 </a>
@@ -104,7 +101,7 @@
 
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-toggle" type="button"
-                class="flex h-11 w-11 flex-col items-center justify-center gap-[6px] rounded-xl border border-slate-700 bg-[#111B2D] transition-colors hover:border-blue-500 md:hidden"
+                class="flex h-11 w-11 flex-col items-center justify-center gap-[6px] rounded-xl border border-slate-700 bg-surface-3 transition-colors hover:border-blue-500 md:hidden"
                 aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
                 <span class="h-[2px] w-5 rounded-full bg-white transition-all duration-300"></span>
                 <span class="h-[2px] w-5 rounded-full bg-white transition-all duration-300"></span>
@@ -115,7 +112,7 @@
 
         <!-- Mobile Navigation -->
         <div id="mobile-menu"
-            class="absolute left-4 right-4 top-full mt-2 hidden overflow-hidden rounded-2xl border border-slate-700/80 bg-[#090F1C]/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
+            class="absolute left-4 right-4 top-full mt-2 hidden overflow-hidden rounded-2xl border border-slate-700/80 bg-surface-2/95 p-3 shadow-2xl backdrop-blur-xl md:hidden">
 
             <nav class="flex flex-col gap-1" aria-label="Mobile navigation">
 
@@ -146,8 +143,8 @@
     </header>
 
     <!-- Main Content -->
-    <main>
-        <main class="about-page overflow-hidden bg-[#05070D] text-white">
+    <main id="main-content" tabindex="-1" class="outline-none">
+        <div class="about-page overflow-hidden bg-surface-0 text-white">
 
             <!-- =========================================================
      01. ABOUT HERO — MODERN DEVELOPER INTRO
@@ -188,7 +185,7 @@
                             <span class="absolute -bottom-1 -right-1 h-2 w-2 bg-cyan-400"></span>
 
                             <span
-                                class="relative z-10 text-[10px] font-bold uppercase tracking-[0.17em] text-slate-300">
+                                class="relative z-10 text-xs font-bold uppercase tracking-[0.17em] text-slate-300">
                                 COMPUTER SCIENCE STUDENT
                             </span>
 
@@ -234,7 +231,7 @@
 
                         <!-- Location / Education -->
                         <div
-                            class="hero-enter hero-delay-4 mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[10px] font-medium text-slate-500">
+                            class="hero-enter hero-delay-4 mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-medium text-slate-400">
 
                             <span class="inline-flex items-center gap-2">
 
@@ -313,7 +310,7 @@
                         <div data-about-photo
                             class="absolute inset-x-0 bottom-0 z-10 flex h-[96%] -translate-y-4 items-end justify-center">
 
-                            <img src="./assets/images/pro.png" alt="Abdulrahman Hasanen" loading="eager"
+                            <img width="900" height="900" src="./assets/images/pro.webp" alt="Abdulrahman Hasanen" loading="eager"
                                 fetchpriority="high" decoding="async" draggable="false" class="h-full w-full origin-bottom scale-[1.05] object-contain object-bottom
                     drop-shadow-[0_15px_30px_rgba(0,0,0,0.35)]
                     transition-transform duration-700 ease-out
@@ -331,9 +328,9 @@
 
                                 <div class="flex items-center gap-2">
 
-                                    <i class="fa-solid fa-code text-[10px] text-blue-400"></i>
+                                    <i class="fa-solid fa-code text-xs text-blue-400"></i>
 
-                                    <span class="font-mono text-[9px] font-semibold text-slate-300">
+                                    <span class="font-mono text-xs font-semibold text-slate-300">
                                         developer.py
                                     </span>
 
@@ -341,14 +338,14 @@
 
                                 <div class="flex items-center gap-1.5">
                                     <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
-                                    <span class="text-[8px] text-slate-500">Online</span>
+                                    <span class="text-[8px] text-slate-400">Online</span>
                                 </div>
 
                             </div>
 
 
                             <!-- Code -->
-                            <div class="overflow-hidden px-3 py-3 font-mono text-[9px] leading-[1.9] sm:text-[10px]">
+                            <div class="overflow-hidden px-3 py-3 font-mono text-xs leading-[1.9] sm:text-xs">
 
                                 <div>
                                     <span class="text-violet-400">student</span>
@@ -427,7 +424,6 @@
 
 
 
-                </div>
 
 
 
@@ -442,7 +438,7 @@
                  02. A FEW DETAILS
             ========================================== -->
             <section id="about-details"
-                class="relative isolate overflow-hidden border-b border-slate-800/60 bg-[#070B14] py-20 sm:py-24">
+                class="relative isolate overflow-hidden border-b border-slate-800/60 bg-surface-1 py-20 sm:py-24">
 
                 <!-- Background Glow -->
                 <div class="pointer-events-none absolute -left-32 top-10 h-72 w-72 rounded-full bg-blue-600/[0.08] blur-[110px]"
@@ -470,7 +466,7 @@
                             <span class="absolute -bottom-1 -right-1 h-2 w-2 bg-cyan-400"></span>
 
                             <span
-                                class="relative z-10 text-[10px] font-bold uppercase tracking-[0.17em] text-slate-300">
+                                class="relative z-10 text-xs font-bold uppercase tracking-[0.17em] text-slate-300">
                                 A QUICK SNAPSHOT
                             </span>
                         </div>
@@ -514,7 +510,7 @@
 
                             <div class="relative z-10">
 
-                                <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-400">
+                                <span class="text-xs font-bold uppercase tracking-[0.18em] text-cyan-400">
                                     ACADEMIC YEAR
                                 </span>
 
@@ -549,7 +545,7 @@
 
                             <div class="relative z-10">
 
-                                <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-400">
+                                <span class="text-xs font-bold uppercase tracking-[0.18em] text-cyan-400">
                                     EXPECTED GRADUATION
                                 </span>
 
@@ -583,7 +579,7 @@
 
                             <div class="relative z-10">
 
-                                <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-cyan-400">
+                                <span class="text-xs font-bold uppercase tracking-[0.18em] text-cyan-400">
                                     BASED IN
                                 </span>
 
@@ -614,7 +610,7 @@
          02. MY BACKGROUND
     ========================================== -->
             <section id="background"
-                class="relative overflow-hidden border-b border-slate-800/60 bg-[#090F1C] py-20 lg:py-24">
+                class="relative overflow-hidden border-b border-slate-800/60 bg-surface-2 py-20 lg:py-24">
 
                 <!-- Subtle Background Glow -->
                 <div class="pointer-events-none absolute -left-40 top-20 h-72 w-72 rounded-full bg-blue-600/10 blur-[100px]"
@@ -650,7 +646,7 @@
                                     </h2>
 
                                     <p
-                                        class="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                                        class="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
                                         Academic Background
                                     </p>
                                 </div>
@@ -677,7 +673,7 @@
                                 <article data-reveal="up" data-reveal-delay="0" class="relative pl-10">
 
                                     <span
-                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-[#090F1C] bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
+                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-surface-2 bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
 
                                     <h3 class="text-base font-bold leading-snug text-white">
                                         Assiut University
@@ -695,7 +691,7 @@
                                         <span>Expected Graduation: 2028</span>
                                     </div>
 
-                                    <p class="mt-2 text-[11px] text-slate-500">
+                                    <p class="mt-2 text-xs text-slate-400">
                                         Currently in my third year.
                                     </p>
 
@@ -706,7 +702,7 @@
                                 <article data-reveal="up" data-reveal-delay="120" class="relative pl-10">
 
                                     <span
-                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-[#090F1C] bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
+                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-surface-2 bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
 
                                     <h3 class="text-base font-bold leading-snug text-white">
                                         Programming & CS Fundamentals
@@ -724,7 +720,7 @@
                                         <span>Programming Coursework</span>
                                     </div>
 
-                                    <p class="mt-2 text-[11px] text-slate-500">
+                                    <p class="mt-2 text-xs text-slate-400">
                                         Understanding programming concepts, code structure,
                                         and working with data.
                                     </p>
@@ -736,7 +732,7 @@
                                 <article data-reveal="up" data-reveal-delay="240" class="relative pl-10">
 
                                     <span
-                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-[#090F1C] bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
+                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-surface-2 bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
 
                                     <h3 class="text-base font-bold leading-snug text-white">
                                         Software Engineering & Visual Programming
@@ -754,7 +750,7 @@
                                         <span>C# · Windows Forms</span>
                                     </div>
 
-                                    <p class="mt-2 text-[11px] text-slate-500">
+                                    <p class="mt-2 text-xs text-slate-400">
                                         Working with GUI controls and event-driven programming.
                                     </p>
 
@@ -765,7 +761,7 @@
                                 <article data-reveal="up" data-reveal-delay="360" class="relative pl-10">
 
                                     <span
-                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-[#090F1C] bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
+                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-surface-2 bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
 
                                     <h3 class="text-base font-bold leading-snug text-white">
                                         Computer Networks
@@ -782,7 +778,7 @@
                                         <span>Networking Coursework</span>
                                     </div>
 
-                                    <p class="mt-2 text-[11px] text-slate-500">
+                                    <p class="mt-2 text-xs text-slate-400">
                                         Understanding how applications communicate
                                         over computer networks.
                                     </p>
@@ -815,7 +811,7 @@
                                     </h2>
 
                                     <p
-                                        class="mt-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                                        class="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
                                         Project-Based Work
                                     </p>
                                 </div>
@@ -844,7 +840,7 @@
 
                                     <!-- Timeline Dot -->
                                     <span
-                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-[#090F1C] bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
+                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-surface-2 bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
 
 
                                     <div>
@@ -869,7 +865,7 @@
 
                                         </div>
 
-                                        <p class="mt-2 text-[11px] text-slate-500">
+                                        <p class="mt-2 text-xs text-slate-400">
                                             Building a responsive company website.
                                         </p>
 
@@ -884,7 +880,7 @@
 
                                     <!-- Timeline Dot -->
                                     <span
-                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-[#090F1C] bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
+                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-surface-2 bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
 
 
                                     <div>
@@ -909,7 +905,7 @@
 
                                         </div>
 
-                                        <p class="mt-2 text-[11px] text-slate-500">
+                                        <p class="mt-2 text-xs text-slate-400">
                                             Developing a dynamic, database-driven portfolio.
                                         </p>
 
@@ -924,7 +920,7 @@
 
                                     <!-- Timeline Dot -->
                                     <span
-                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-[#090F1C] bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
+                                        class="absolute left-0 top-1.5 h-4 w-4 rounded-full border-[3px] border-surface-2 bg-blue-500 shadow-[0_0_14px_rgba(59,130,246,0.55)]"></span>
 
 
                                     <div>
@@ -949,7 +945,7 @@
 
                                         </div>
 
-                                        <p class="mt-2 text-[11px] text-slate-500">
+                                        <p class="mt-2 text-xs text-slate-400">
                                             Working with desktop application technologies.
                                         </p>
 
@@ -975,7 +971,7 @@
      03. PROJECT SHOWCASE
 ========================================================= -->
             <section id="about-projects"
-                class="relative isolate overflow-hidden border-y border-slate-800/60 bg-[#070B14] py-16 sm:py-20 lg:py-24">
+                class="relative isolate overflow-hidden border-y border-slate-800/60 bg-surface-1 py-16 sm:py-20 lg:py-24">
 
                 <!-- Ambient Background -->
                 <div class="pointer-events-none absolute -right-40 top-20 h-96 w-96 rounded-full bg-blue-600/[0.09] blur-[120px]"
@@ -1012,7 +1008,7 @@
                                 <span class="absolute -bottom-1 -right-1 h-2 w-2 bg-cyan-400"></span>
 
                                 <span
-                                    class="relative z-10 text-[10px] font-bold uppercase tracking-[0.17em] text-slate-300">
+                                    class="relative z-10 text-xs font-bold uppercase tracking-[0.17em] text-slate-300">
                                     SELECTED WORK
                                 </span>
 
@@ -1046,7 +1042,7 @@
 
                         <!-- Projects Counter -->
                         <div
-                            class="flex items-center gap-4 self-start rounded-xl border border-blue-400/15 bg-[#111B2D]/70 px-4 py-3 md:self-auto">
+                            class="flex items-center gap-4 self-start rounded-xl border border-blue-400/15 bg-surface-3/70 px-4 py-3 md:self-auto">
 
                             <div
                                 class="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-500/10 text-lg text-blue-400">
@@ -1065,7 +1061,7 @@
                                 </div>
 
                                 <span
-                                    class="mt-2 block text-[8px] font-bold uppercase tracking-[0.16em] text-slate-500">
+                                    class="mt-2 block text-[8px] font-bold uppercase tracking-[0.16em] text-slate-400">
 
                                     PUBLISHED PROJECTS
 
@@ -1080,7 +1076,7 @@
 
 
                     <!-- Projects Grid -->
-                    <div id="projects-container" class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+                    <div id="projects-container" class="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3"><noscript><p class="col-span-full text-sm text-slate-400">Projects load with JavaScript. You can also see them on <a class="text-blue-400 underline" href="https://github.com/abdulrahman-hasanen">GitHub</a>.</p></noscript>
                         <!-- Project cards rendered dynamically via assets/js/projects.js -->
                     </div>
 
@@ -1092,13 +1088,13 @@
                     <div
                         class="mt-9 flex flex-wrap items-center justify-between gap-3 border-t border-slate-800/70 pt-5">
 
-                        <span class="text-[9px] font-semibold uppercase tracking-[0.16em] text-slate-500">
+                        <span class="text-xs font-semibold uppercase tracking-[0.16em] text-slate-400">
 
                             DESIGNED · DEVELOPED · BUILT THROUGH PRACTICE
 
                         </span>
 
-                        <span class="font-mono text-[10px] text-blue-400">
+                        <span class="font-mono text-xs text-blue-400">
 
                             <span data-project-count>02</span> / PROJECTS
 
@@ -1121,7 +1117,7 @@
          04. TECHNICAL SKILLS
     ========================================================= -->
             <section id="technologies"
-                class="relative isolate overflow-hidden border-y border-white/[0.06] bg-[#070B14] py-20 sm:py-24">
+                class="relative isolate overflow-hidden border-y border-white/[0.06] bg-surface-1 py-20 sm:py-24">
 
                 <!-- Background Glow -->
                 <div class="pointer-events-none absolute -right-40 top-0 h-96 w-96 rounded-full bg-blue-600/[0.08] blur-[120px]"
@@ -1149,7 +1145,7 @@
                             <span class="absolute -bottom-1 -right-1 h-2 w-2 bg-cyan-400"></span>
 
                             <span
-                                class="relative z-10 text-[10px] font-bold uppercase tracking-[0.17em] text-slate-300">
+                                class="relative z-10 text-xs font-bold uppercase tracking-[0.17em] text-slate-300">
                                 MY TOOLKIT
                             </span>
 
@@ -1330,7 +1326,7 @@
                         class="mt-5 flex flex-col gap-4 rounded-2xl border border-white/[0.07] bg-[#0D1422]/80 px-6 py-5 sm:flex-row sm:items-center sm:justify-between">
 
                         <div>
-                            <span class="text-[9px] font-bold uppercase tracking-[0.18em] text-blue-400">
+                            <span class="text-xs font-bold uppercase tracking-[0.18em] text-blue-400">
                                 Core Foundations
                             </span>
 
@@ -1356,18 +1352,18 @@
             </section>
 
 
-        </main>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800/70 bg-[#05070D]">
+    <footer class="border-t border-slate-800/70 bg-surface-0">
 
         <div class="mx-auto flex max-w-7xl flex-col items-center px-6 py-9">
 
             <!-- Logo -->
             <a href="./index.html#home" aria-label="Abdulrahman Hasanen Home"
                 class="inline-flex items-center justify-center">
-                <img src="./assets/images/logo.png" alt="Abdulrahman Hasanen"
+                <img width="240" height="180" src="./assets/images/logo.webp" alt="Abdulrahman Hasanen"
                     class="block h-12 w-auto max-w-[160px] object-contain" loading="lazy">
             </a>
 
@@ -1422,7 +1418,7 @@
             <div class="my-4 h-px w-full max-w-2xl bg-slate-800/70"></div>
 
             <!-- Copyright -->
-            <p class="text-center text-[11px] font-medium text-slate-500">
+            <p class="text-center text-xs font-medium text-slate-400">
                 © 2026 Abdulrahman Hasanen. All Rights Reserved.
             </p>
 
@@ -1437,7 +1433,7 @@
         <button id="back-to-top" type="button" disabled aria-label="Back to top" aria-hidden="true" data-visible="false"
             class="floating-action group relative flex h-12 w-12
             translate-y-3 pointer-events-none items-center justify-center
-            rounded-2xl border border-blue-500/30 bg-[#111B2D]/95
+            rounded-2xl border border-blue-500/30 bg-surface-3/95
             text-blue-400 opacity-0 shadow-xl shadow-black/30
             backdrop-blur-xl transition-all duration-300
             hover:-translate-y-1 hover:border-blue-400

@@ -51,7 +51,7 @@
     let roleHtml = "";
     if (project.role) {
       roleHtml = `
-        <span class="mb-2 text-[9px] font-bold uppercase tracking-[0.16em] text-blue-400">
+        <span class="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-blue-400">
             ${escapeHtml(project.role)}
         </span>
       `;
@@ -66,8 +66,8 @@
       techStackHtml = `
         <div class="mt-5 pb-4">
             <span class="inline-flex max-w-full items-center gap-2 rounded-full border border-slate-500/40 px-3.5 py-2">
-                <i class="fa-solid fa-code text-[10px] text-blue-400"></i>
-                <span class="truncate font-mono text-[9px] font-semibold uppercase tracking-[0.10em] text-slate-300 sm:text-[10px]">
+                <i class="fa-solid fa-code text-xs text-blue-400"></i>
+                <span class="truncate font-mono text-xs font-semibold uppercase tracking-[0.10em] text-slate-300 sm:text-xs">
                     ${escapeHtml(project.tech_stack)}
                 </span>
             </span>
@@ -84,10 +84,10 @@
       linksHtml += `
         <a href="${escapeHtml(project.github_url)}" target="_blank" rel="noopener noreferrer"
             aria-label="View ${escapeHtml(project.title)} repository on GitHub"
-            class="group/link inline-flex items-center gap-2 text-[11px] font-semibold text-slate-300 transition-colors duration-300 hover:text-white">
+            class="group/link inline-flex items-center gap-2 text-xs font-semibold text-slate-300 transition-colors duration-300 hover:text-white">
             <i class="fa-brands fa-github text-base text-slate-400 transition-colors group-hover/link:text-white"></i>
             <span>Repository</span>
-            <i class="fa-solid fa-arrow-up-right-from-square text-[9px] text-blue-400 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"></i>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-blue-400 transition-transform duration-300 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5"></i>
         </a>
       `;
     }
@@ -96,17 +96,17 @@
       linksHtml += `
         <a href="${escapeHtml(project.live_url)}" target="_blank" rel="noopener noreferrer"
             aria-label="Visit ${escapeHtml(project.title)} live website"
-            class="group/link inline-flex items-center gap-2 text-[11px] font-semibold text-slate-300 transition-colors duration-300 hover:text-white">
+            class="group/link inline-flex items-center gap-2 text-xs font-semibold text-slate-300 transition-colors duration-300 hover:text-white">
             <i class="fa-solid fa-arrow-up-right-from-square text-[13px] text-blue-400"></i>
             <span>Live Website</span>
-            <i class="fa-solid fa-arrow-right text-[9px] text-slate-500 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:text-cyan-400"></i>
+            <i class="fa-solid fa-arrow-right text-xs text-slate-400 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:text-cyan-400"></i>
         </a>
       `;
     }
 
     if (!hasGithub && !hasLive) {
       linksHtml = `
-        <span class="inline-flex items-center gap-2 text-[10px] text-slate-500">
+        <span class="inline-flex items-center gap-2 text-xs text-slate-400">
             <i class="fa-regular fa-clock"></i>
             Links coming soon
         </span>
@@ -114,7 +114,7 @@
     }
 
     return `
-      <article data-project-motion data-reveal="up"
+      <article data-reveal="up"
           class="group flex h-full min-w-0 flex-col border-l border-white/[0.14] pl-4 pr-2 transition-all duration-300 hover:border-blue-500/60 sm:pl-5">
           <div class="flex items-center gap-3">
               <span class="h-3.5 w-3.5 shrink-0 rounded-full ${statusInfo.class}"
@@ -167,7 +167,7 @@
             <h3 class="mt-4 text-lg font-bold text-white">
                 Projects coming soon.
             </h3>
-            <p class="mt-2 text-sm text-slate-500">
+            <p class="mt-2 text-sm text-slate-400">
                 Published projects will appear here.
             </p>
         </div>

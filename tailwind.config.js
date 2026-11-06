@@ -1,6 +1,6 @@
-/** Tailwind v3.4 config (moved out of base.html; same tokens as before). */
+/** Tailwind v3.4 config (moved out of the HTML pages; same tokens as before). */
 module.exports = {
-  content: ["./templates/**/*.html", "./static/js/**/*.js"],
+  content: ["./*.html", "./assets/js/**/*.js"],
   theme: {
     extend: {
       fontFamily: {
@@ -16,13 +16,8 @@ module.exports = {
           blueHover: "#1D4ED8",
           lightBlue: "#3B82F6",
         },
-        // Page/section/card surfaces (were repeated as arbitrary hex values)
-        surface: {
-          0: "#05070D",
-          1: "#070B14",
-          2: "#090F1C",
-          3: "#111B2D",
-        },
+        // Section / card surfaces (were repeated as arbitrary hex values)
+        surface: { 0: "#05070D", 1: "#070B14", 2: "#090F1C", 3: "#111B2D" },
       },
     },
   },
